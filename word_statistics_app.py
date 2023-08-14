@@ -2,25 +2,7 @@ import click
 from typing import Protocol, List, Dict
 from file_access_module import FileAccessorProtocol, DefaultFileAccessor, OutputPathValidator
 from summary_statistics_module import WordStat, StatisticProtocol, WordCount, WordFrequency
-
-# ========== Tokeniser ==========
-
-# Define the Tokenization Strategy Interface
-class TokenizationStrategy(Protocol):
-    def tokenize(self, text: str) -> List[str]:
-        ...
-
-# Implement Default Strategy
-class DefaultTokenizationStrategy(TokenizationStrategy):
-    def tokenize(self, text: str) -> List[str]:
-        pass
-
-class Tokenizer:
-    def __init__(self, strategy: TokenizationStrategy = DefaultTokenizationStrategy()):
-        self.strategy = strategy
-
-    def tokenize(self, text: str) -> List[str]:
-        return self.strategy.tokenize(text)
+from tokenizer_module import TokenizationStrategy, DefaultTokenizationStrategy, Tokenizer
 
 # ========== Summarising Engine ==========
 
