@@ -10,20 +10,21 @@ def test_reading_file(tmp_path):
     file_content = "Greetings Program!"
     test_file = tmp_path / "read_test.txt"
     test_file.write_text(file_content)
-    accessor = DefaultFileAccessor()
     
+    accessor = DefaultFileAccessor()
     read_content = accessor.read(test_file)
+    
     assert read_content == file_content
 
 def test_writing_file(tmp_path):
     # Check if the write function can successfully write content to a file
     content_to_write = "Welcome to the Grid!"
     test_file = tmp_path / "write_test.txt"
+    
     accessor = DefaultFileAccessor()
-
     accessor.write(test_file, content_to_write)
-
     written_content = test_file.read_text()
+
     assert written_content == content_to_write
     
 def test_append_file(tmp_path):
@@ -32,11 +33,11 @@ def test_append_file(tmp_path):
     appended_content = ", SuperUsers!"
     test_file = tmp_path / "append_test.txt"
     test_file.write_text(initial_content)
+    
     accessor = DefaultFileAccessor()
-
     accessor.write(test_file, appended_content, mode='a')
-
     final_content = test_file.read_text()
+
     assert final_content == initial_content + appended_content
     
 # ========== Test for OutputPathValidator ==========
@@ -49,6 +50,7 @@ def test_for_valid_file_format():
         "out.csv": ".csv",
         "out.txt": ".txt"
     }
+    
     assert output_spec == expected_output_spec
     
 def test_for_invalid_file_format():
