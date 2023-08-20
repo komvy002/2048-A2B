@@ -7,7 +7,7 @@ from file_access_module import DefaultFileAccessor, OutputPathValidator, click
 def test_reading_file(tmp_path):
     # Check if the read function can successfully read a files contents
     file_content = "Greetings Program!"
-    test_file = tmp_path / "test.txt"
+    test_file = tmp_path / "read_test.txt"
     test_file.write_text(file_content)
     accessor = DefaultFileAccessor()
     
@@ -37,3 +37,15 @@ def test_append_file(tmp_path):
 
     final_content = test_file.read_text()
     assert final_content == initial_content + appended_content
+    
+# ========== Test for OutputPathValidator ==========
+
+def test_for_valid_file_format():
+    # Test for valid file formats
+    output_spec = OutputPathValidator.validate(None, None, ["in.csv", "in.txt"])
+
+    expected_output_spec = {
+        "in.csv": ".csv",
+        "in.txt": ".txt"
+    }
+    assert output_spec == expected_output_spec
