@@ -3,56 +3,7 @@ from typing import Protocol, List, Dict
 from file_access_module import FileAccessorProtocol, DefaultFileAccessor, OutputPathValidator
 from summary_statistics_module import WordStat, StatisticProtocol, WordCount, WordFrequency
 from tokenizer_module import TokenizationStrategy, DefaultTokenizationStrategy, Tokenizer
-
-# ========== Summarising Engine ==========
-
-class SummarisingEngine:
-    def __init__(self, stats: List[StatisticProtocol]):
-        self.stats = stats
-        self.tokenizer = Tokenizer()
-
-    def compute_statistics(self, input_text) -> dict:
-        pass
-
-# ========== Formatting Engine ==========
-
-class FileStats:
-    def __init__(self, input_path: str, word_count: int, frequent_words: List[WordStat]):
-        self.input_path = input_path
-        self.word_count = word_count
-        self.frequent_words = frequent_words
-
-class FormatterProtocol(Protocol):
-    def format_output(self, file_stats: FileStats) -> str:
-        pass
-
-class TxtFormatter(FormatterProtocol):
-    def format_output(self, file_stats: FileStats) -> str:
-        pass
-
-class CsvFormatter(FormatterProtocol):
-    def format_output(self, file_stats: FileStats) -> str:
-        pass
-
-# ========== Word Stats Manager ==========
-
-class WordStatsManager:
-    def __init__(self, 
-                 file_accessor: FileAccessorProtocol, 
-                 tokenizer: Tokenizer, 
-                 summarising_engine: SummarisingEngine, 
-                 formatters: Dict[str, FormatterProtocol] = None):
-        
-        pass
-
-    def register_formatter(self, format: str, formatter: FormatterProtocol):
-        self.formatters[format] = formatter
-    
-    def get_formatter(self, format):
-        return self.formatters.get(format, None)
-
-    def process_file(self, input_path, number, output_spec):
-        pass
+from formatting_engine import FileStats, FormatterProtocol, TxtFormatter, CsvFormatter
 
 # ========== Console App ==========
 

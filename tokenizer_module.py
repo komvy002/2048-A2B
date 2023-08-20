@@ -11,8 +11,7 @@ class TokenizationStrategy(Protocol):
 # Implement Default Strategy
 class DefaultTokenizationStrategy(TokenizationStrategy):
     def tokenize(self, text: str) -> List[str]:
-        #! TODO Try using regular expression to find the right text
-        pass
+        return re.findall(r'\b\w+\b', text)
 
 class Tokenizer:
     def __init__(self, strategy: TokenizationStrategy = DefaultTokenizationStrategy()):
