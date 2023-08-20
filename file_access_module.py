@@ -1,6 +1,6 @@
 import os
 import click
-from typing import Protocol
+from typing import Protocol, Dict
 
 # ========== File Access ==========
 

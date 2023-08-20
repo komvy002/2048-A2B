@@ -1,3 +1,5 @@
+from typing import Protocol, List
+
 # ========== Summary Statistics Protocols and Implementations ==========
 
 class WordStat:
