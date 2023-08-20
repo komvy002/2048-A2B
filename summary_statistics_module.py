@@ -13,7 +13,6 @@ class StatisticProtocol(Protocol):
 
 class WordCount(StatisticProtocol):
     def compute(self, words: list[str]) -> int:
-        # write function to count the words in the list
         return len(words)
 
 class WordFrequency(StatisticProtocol):
