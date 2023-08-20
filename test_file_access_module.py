@@ -57,3 +57,10 @@ def test_for_invalid_file_format():
         OutputPathValidator.validate(None, None, ["out.doc"])
 
     assert "has an invalid format .doc" in str(exc_info.value)
+    
+def test_for_mixed_file_formats():
+    # Test to ensure that a mix of valid and invalid file formats raises an exception
+    with pytest.raises(click.BadParameter) as exc_info:
+        OutputPathValidator.validate(None, None, ["out.csv", "out.txt", "out.doc"])
+
+    assert "has an invalid format .doc" in str(exc_info.value)
