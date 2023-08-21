@@ -1,3 +1,4 @@
+from collections import Counter
 from typing import Protocol, List
 
 # ========== Summary Statistics Protocols and Implementations ==========
@@ -17,4 +18,5 @@ class WordCount(StatisticProtocol):
 
 class WordFrequency(StatisticProtocol):
     def compute(self, words: list[str]) -> List[WordStat]:
-        pass
+        word_freq = Counter(words)
+        print(f"word_freq= " + {word_freq})
