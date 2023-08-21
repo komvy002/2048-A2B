@@ -10,4 +10,9 @@ class SummarisingEngine:
         self.tokenizer = Tokenizer()
 
     def compute_statistics(self, input_text) -> dict:
-        pass
+        words = self.tokenizer.tokenize(input_text)
+        results = {}
+        for stat in self.stats:
+            key = type(stat).__name__
+            results[key] = stat.compute(words)
+        return results

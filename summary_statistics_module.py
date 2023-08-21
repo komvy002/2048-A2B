@@ -8,7 +8,7 @@ class WordStat:
         self.word = word
         self.frequency = frequency
         
-    # Used for testing by comparing two objects equality based on their attributes not their references.
+    # Used for testing by comparing objects equality based on their attributes not their references.
     def __eq__(self, other):
         if not isinstance(other, WordStat):
             return NotImplemented
