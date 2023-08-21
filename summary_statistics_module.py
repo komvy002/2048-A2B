@@ -19,4 +19,5 @@ class WordCount(StatisticProtocol):
 class WordFrequency(StatisticProtocol):
     def compute(self, words: list[str]) -> List[WordStat]:
         word_freq = Counter(words)
-        print(f"word_freq= " + {word_freq})
+        print(word_freq)
+        return word_freq.most_common
