@@ -7,6 +7,12 @@ class WordStat:
     def __init__(self, word: str, frequency: int):
         self.word = word
         self.frequency = frequency
+        
+    # Used for testing by comparing two objects equality based on their attributes not their references.
+    def __eq__(self, other):
+        if not isinstance(other, WordStat):
+            return NotImplemented
+        return self.word == other.word and self.frequency == other.frequency
 
 class StatisticProtocol(Protocol):
     def compute(self, words: list[str]):
@@ -19,5 +25,4 @@ class WordCount(StatisticProtocol):
 class WordFrequency(StatisticProtocol):
     def compute(self, words: list[str]) -> List[WordStat]:
         word_freq = Counter(words)
-        print(word_freq)
-        return word_freq.most_common
+        return [WordStat(word, frequency) for word, frequency in word_freq.most_common()]

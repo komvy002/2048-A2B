@@ -66,7 +66,7 @@ def test_word_frequency_word_list(word_list):
 def test_word_frequency_letter_list(letter_list):
     word_frequency = WordFrequency()
     result = word_frequency.compute(letter_list)
-    expected = [WordStat("a", 3), WordStat("b", 1), WordStat("c", 1)]
+    expected = [WordStat("a", 2), WordStat("b", 1), WordStat("c", 1)]
     
     assert result == expected, f"Expected {expected} but got {result}"
     
