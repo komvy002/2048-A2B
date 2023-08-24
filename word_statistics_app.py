@@ -4,6 +4,8 @@ from file_access_module import FileAccessorProtocol, DefaultFileAccessor, Output
 from summary_statistics_module import WordStat, StatisticProtocol, WordCount, WordFrequency
 from tokenizer_module import TokenizationStrategy, DefaultTokenizationStrategy, Tokenizer
 from formatting_engine import FileStats, FormatterProtocol, TxtFormatter, CsvFormatter
+from summarizing_engine import SummarisingEngine
+from wordstats_engine import WordStatsManager
 
 # ========== Console App ==========
 
