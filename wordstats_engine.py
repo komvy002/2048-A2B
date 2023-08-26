@@ -4,9 +4,6 @@ from tokenizer_module import Tokenizer
 from formatting_engine import FormatterProtocol, FileStats
 from summarizing_engine import SummarisingEngine
 
-
-# ========== Word Stats Manager ==========
-
 class WordStatsManager:
     def __init__(self, 
                  file_accessor: FileAccessorProtocol, 

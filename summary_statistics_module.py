@@ -1,8 +1,6 @@
 from collections import Counter
 from typing import Protocol, List
 
-# ========== Summary Statistics Protocols and Implementations ==========
-
 class WordStat:
     def __init__(self, word: str, frequency: int):
         self.word = word

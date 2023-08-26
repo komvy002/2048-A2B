@@ -1,9 +1,6 @@
 import pytest
 from file_access_module import DefaultFileAccessor, OutputPathValidator, click
 
-# ================== Tests for file_access_module ==================
-
-# ========== Test for DefaultFileAccessor ==========
 
 def test_reading_file(tmp_path):
     # Check if the read function can successfully read a files contents
@@ -40,7 +37,6 @@ def test_append_file(tmp_path):
 
     assert final_content == initial_content + appended_content
     
-# ========== Test for OutputPathValidator ==========
 
 def test_for_valid_file_format():
     # Test for valid file formats

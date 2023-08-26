@@ -1,8 +1,6 @@
 from typing import Protocol, List
 from summary_statistics_module import WordStat
 
-# ========== Formatting Engine ==========
-
 class FileStats:
     def __init__(self, input_path: str, word_count: int, frequent_words: List[WordStat]):
         self.input_path = input_path

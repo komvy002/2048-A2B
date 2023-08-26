@@ -18,7 +18,6 @@ def number_list() -> list:
 def mixed_list() -> list:
     return ["dog", "a", "1", "dog"]
 
-# ========== Tests for WordCount ==========
 def test_word_count_empty_list():
     word_count = WordCount()
     result = word_count.compute([])
@@ -49,7 +48,6 @@ def test_word_count_mixed_list(mixed_list):
     
     assert result == 4, f"Expected 4 but got {result}"
     
-# ========== Tests for WordFrequency ==========
 def test_word_frequency_empty_list():
     word_frequency = WordFrequency()
     result = word_frequency.compute([])

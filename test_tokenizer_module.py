@@ -1,7 +1,5 @@
 from tokenizer_module import DefaultTokenizationStrategy, Tokenizer
 
-# Testing for the tokenizer_module
-
 def test_default_tokenization_strategy_with_letters():
     strategy = DefaultTokenizationStrategy()
     result = strategy.tokenize("a a a a a")

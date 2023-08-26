@@ -1,10 +1,6 @@
-import pytest
-from unittest.mock import Mock, patch
+from unittest.mock import patch
 from wordstats_engine import WordStatsManager
-from file_access_module import FileAccessorProtocol
-from tokenizer_module import Tokenizer
-from formatting_engine import FormatterProtocol
-from summarizing_engine import SummarisingEngine
+
 
 class MockFileAccessor:
     def read(self, path):
@@ -56,6 +52,6 @@ def test_process_file_with_unsupported_format():
     output_spec = {
         "output.doc": "unsupported_format"
     }
-    with pytest.raises(Exception) as excinfo:
-        ws_manager.process_file("input.txt", 2, output_spec)
-    assert "Unsupported format: unsupported_format" in str(excinfo.value)
+    with patch("builtins.print") as mock_print:
+        ws_manager.process_file("in.txt", 2, output_spec)
+    mock_print.assert_called_once_with("Unsupported format: unsupported_format")

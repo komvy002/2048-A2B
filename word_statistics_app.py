@@ -7,7 +7,6 @@ from formatting_engine import FileStats, FormatterProtocol, TxtFormatter, CsvFor
 from summarizing_engine import SummarisingEngine
 from wordstats_engine import WordStatsManager
 
-# ========== Console App ==========
 
 @click.command(no_args_is_help=True)
 @click.option("--number", default=10, type=click.IntRange(min=1),

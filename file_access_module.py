@@ -2,9 +2,7 @@ import os
 import click
 from typing import Protocol, Dict
 
-# ========== File Access ==========
 
-# Define the File Accessor Interface
 class FileAccessorProtocol(Protocol):
     def read(self, path: str) -> str:
         ...
@@ -12,7 +10,7 @@ class FileAccessorProtocol(Protocol):
     def write(self, path: str, content: str, mode: str = 'w') -> None:
         ...
 
-# Implement Default File Accessor
+
 class DefaultFileAccessor:
     def read(self, path: str) -> str:
         with open(path, 'r') as file:
