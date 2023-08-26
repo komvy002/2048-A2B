@@ -1,9 +1,8 @@
 import click
-from typing import Protocol, List, Dict
-from file_access_module import FileAccessorProtocol, DefaultFileAccessor, OutputPathValidator
-from summary_statistics_module import WordStat, StatisticProtocol, WordCount, WordFrequency
-from tokenizer_module import TokenizationStrategy, DefaultTokenizationStrategy, Tokenizer
-from formatting_engine import FileStats, FormatterProtocol, TxtFormatter, CsvFormatter
+from file_access_module import DefaultFileAccessor, OutputPathValidator
+from summary_statistics_module import WordCount, WordFrequency
+from tokenizer_module import DefaultTokenizationStrategy, Tokenizer
+from formatting_engine import TxtFormatter, CsvFormatter
 from summarizing_engine import SummarisingEngine
 from wordstats_engine import WordStatsManager
 

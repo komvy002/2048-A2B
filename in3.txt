@@ -1,0 +1,12 @@
+kk kk kk
+v v v v v
+rabbit
+rabbit
+lion
+rabbit
+lion
+lion
+lion
+5 5 5 5
+9
+9
