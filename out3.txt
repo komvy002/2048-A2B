@@ -1,3 +1,0 @@
-File in1.txt contains 22 words. Frequent words are: a (5), b (4), c (3), d (2), kk (2)
-File in2.txt contains 8 words. Frequent words are: dog (5), cat (2), duck (1)
-File in3.txt contains 21 words. Frequent words are: v (5), lion (4), 5 (4), kk (3), rabbit (3)

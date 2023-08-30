@@ -1,5 +1,5 @@
 from summarizing_engine import SummarisingEngine
-from tokenizer_module import Tokenizer, DefaultTokenizationStrategy
+from tokenizer_module import Tokenizer
 from summary_statistics_module import WordCount, WordFrequency
 import pytest
     
